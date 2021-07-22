@@ -1,0 +1,31 @@
+*{
+    background-color: rgb(68, 66, 66);
+    color: white;
+}
+.container-fluid h1 {
+    font-size: 45px;
+text-align: center;
+}
+.container-fluid {
+    font-size: 15px;
+    text-align: center;
+    color: white;
+}
+.about {
+   text-align: left;
+    justify-content: space-between;
+    list-style: none;
+    padding: 10px;
+    font-weight: normal;
+    font-size: 15px;
+    color: white;
+    border-radius: 15px;
+    text-shadow: none;
+  }
+  
+  
+ 
+
+ .col-sm-8 {
+    background-color: rgb(255, 255, 255);
+ }
