@@ -1,5 +1,8 @@
 const express = require('express');
 const router = express.Router();
-router.use(require('./searchRoutes'));
+
+const sightingsRoute = require('./sightings-routes');
+
+router.use(require('./searchRoutes', sightingsRoute));
 
 module.exports = router;

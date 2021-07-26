@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const db = require('../../config/connection');
+const db = require('../../../config/connection');
 
 //Get all date_time, Full Address, duration and summary
 router.get('/date', function(req, res) {
