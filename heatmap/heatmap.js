@@ -22,7 +22,7 @@ function initMap(){
   map = new google.maps.Map(document.getElementById('map'), {
     center: sanFrancisco,
     zoom: 13,
-    mapTypeId: 'satellite'
+    map: map
   });
   
   var heatmap = new google.maps.visualization.HeatmapLayer({
