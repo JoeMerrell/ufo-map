@@ -3,12 +3,33 @@ const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
 
+
+// cookies and express -session
+const sessionConfig = {
+  name: 'maverick',
+  secret: 'secret maverick',
+  cookie: {
+    maxAge: 1000 * 60 * 2400,
+    secure: false,
+    httponly: true,
+  },
+  resave: false,
+  saveUninitialized: true,
+
+}
+
+Server.use(session(sessionConfig))
+
+
+
+
 // const helpers = require('./utils/helpers');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
 const sequelize = require('./config/connection');
+const { Server } = require('http');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const sess = {
