@@ -1,34 +1,39 @@
 const express = require('express');
 const router = express.Router();
-const db = require('../../../config/connection');
+const { Sightings } = require('../../models');
+const sequelize = require('../../config/connection');
 
-//Get all date_time, Full Address, duration and summary
-router.get('/date', function(req, res) {
-   
-    
-    const sql = `SELECT * FROM date_time
-                SELECT * FROM FULL Address
-                SELECT * FROM duration
-                SELECT * FROM summary
-                WHERE date_time = ?
-                GROUP BY date_time ORDER BY count DESC`;
+//Get all date_time, city_state, duration and summary
+router.get('/date', function (req, res) {
+  Sightings.findAll({
+    where: {
+      date: req.params.date
+    },
 
-    const params = [req.params.date];
+    attributes: [
+      'id',
+      'date',
+      'city_state',
+      'latitude',
+      'longitude',
+      'duration',
+      'summary',
+      'shape',
+    ],
+    order: [['date', 'DESC']],
 
-    db.query(sql, params, (err, row) => {
-
-        // need to set up code for search list to list all sightings as cards
-
-        //ask TA about for looping sql data
-       // for (let i = 0, i < date_time.length, i++);
-
-        if (err) {
-          res.status(400).json({ error: err.message });
-          return;
-        }
-        res.json({
-          message: 'success',
-          data: row
-        });
-      });
+  })
+    .then(dbSightingsData => {
+      if (!dbSightingsData) {
+        res.status(404).json({ message: 'No sighting found with this date' });
+        return;
+      }
+      res.json(dbSightingsData);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
     });
+});
+
+module.exports = router;
