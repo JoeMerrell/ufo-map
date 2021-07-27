@@ -29,18 +29,19 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 const sequelize = require('./config/connection');
+<<<<<<< HEAD
 const { Server } = require('http');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
+=======
+
+>>>>>>> 1ade64230d4736cbe15fbe32cd031d7712adf43d
 
 const sess = {
     secret: 'Super secret secret',
-    cookie: {},
     resave: false,
     saveUninitialized: true,
-    store: new SequelizeStore({
-      db: sequelize
-    })
-  };
+  
+};
   
   app.use(session(sess));
   
@@ -53,7 +54,7 @@ const sess = {
   app.use(express.urlencoded({ extended: false }));
   app.use(express.static(path.join(__dirname, 'public')));
   
-//   app.use(require('./controllers/'));
+  app.use(require('./controllers/'));
   
   sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => console.log('Now listening'));

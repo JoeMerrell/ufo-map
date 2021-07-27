@@ -1,13 +1,13 @@
 const express = require('express');
 const router = express.Router();
-const { Sightings } = require('../../models');
+const Sightings  = require('../../models/Sightings');
 const sequelize = require('../../config/connection');
 
 //Get all date_time, city_state, duration and summary
-router.get('/date', function (req, res) {
+router.get('/state/:statename', function (req, res) {
   Sightings.findAll({
     where: {
-      date: req.params.date
+      state: req.params.statename
     },
 
     attributes: [
