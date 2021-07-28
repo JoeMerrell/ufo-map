@@ -1,5 +1,5 @@
 *{
-    background-color: rgb(68, 66, 66);
+    background-color: rgb(2, 0, 0);
     color: white;
 }
 .container-fluid h1 {
@@ -22,8 +22,14 @@ text-align: center;
     border-radius: 15px;
     text-shadow: none;
   }
-  
-  
+  .input-group{
+      background-color: lightgray;
+      color:white;
+  }
+  .searchButton {
+      background-color: blue;
+      color: rgb(251, 251, 253);
+  }
  
 
  .col-sm-8 {
