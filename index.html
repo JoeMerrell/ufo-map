@@ -49,7 +49,10 @@ $(function() {
     opens: 'left'
   }, function(start, end, label) {
     console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+
+
   });
+  
 });
 </script>
 <!---->
@@ -60,20 +63,22 @@ $(function() {
     </div>
    
     
-    <div class="col-sm-6">
-     <div class="container"> 
-       <canvas id="myHeatmap"></canvas>
-       </div>
-       <div>
-       <script defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBTPiv7HmVutsJy1frfbjICxVPAO4jxEJo&libraries=visualization&callback=initMap">
-  </script>
-  <script src="./heatmap/heatmap.js"></script>
-  </div>
+    <div class="col-sm-7">
+      <h1 class="google">Google Maps</h1>
+
+      <div id="map"></div>
   
-<div class="container">
-  <canvas id="myChart"></canvas>
-</div>
+      
+      <script defer
+          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBTPiv7HmVutsJy1frfbjICxVPAO4jxEJo&libraries=visualization&callback=initMap">
+          </script>
+          <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+      <script src="./heatmap/heatmap.js"></script>
+  
+  
+
+  <canvas class="pie" id="myChart"></canvas>
+
 <script>
   var myChart = document.getElementById('myChart').getContext('2d');
   var ufoSightingsChart = new Chart(myChart, {
@@ -88,6 +93,9 @@ $(function() {
                 borderColor:'#777',
                 hoverBorderWidth:3,
                 hoverBorderColor: 'black',
+                
+            
+                
                
             }]
             },
@@ -112,13 +120,14 @@ $(function() {
                         bottom:0,
                         top:0
                     }
+
                 }
             }
         
     
         });
     </script>
-     
+     </div>
      </div>
 </div>
 </div>

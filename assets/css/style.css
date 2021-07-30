@@ -1,5 +1,5 @@
 *{
-    background-color: rgb(147, 164, 182);
+    background-color: rgb(66, 66, 55);
     color: white;
 }
 .container-fluid h1 {
@@ -27,11 +27,36 @@ text-align: center;
       color:white;
   }
   .searchButton {
-      background-color: blue;
-      color: rgb(251, 251, 253);
+      
+    position: relative;
+    left:50px;
+    background-color: #12aedd;
+    display:block;
+    margin: 20px 0px 0px 20px;
+    text-align: center;
+    border-radius: 12px;
+    border: 2px solid #13ecec;
+    padding:14px 110px;
+    outline: none;
+    color: white;
+    cursor: pointer;
+    transition: 0.25px;
+    
   }
  
-
- .col-sm-8 {
+.google{
+    margin-top:0;
+    margin-bottom: 2;
+}
+ .col-sm-7 {
     background-color: rgb(255, 255, 255);
+    padding: 10px 10px 10px 10px;
  }
+ .pie{
+
+     left:300px;
+     width: 700px;
+    height: 700px;
+     
+ }
+
