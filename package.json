@@ -20,8 +20,13 @@
   },
   "homepage": "https://github.com/JoeMerrell/ufo-map#readme",
   "dependencies": {
+    "axios": "^0.21.1",
     "connect-session-sequelize": "^7.1.1",
+<<<<<<< HEAD
     "cookie-session": "^1.4.0",
+=======
+    "cors": "^2.8.5",
+>>>>>>> 7518a3558841139c1c17df3b9ede97c1658bf302
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "express-handlebars": "^5.3.2",

@@ -16,23 +16,49 @@
         background-repeat: no-repeat;
         background-position: Center;
         background-attachment: fixed;
+        margin-top:40px;
       }
       
       </style>
 </head>
 <body>
-
-<div class="container">
-  <h2>Submit a sighting</h2>
-  
+<!--new-->
+<div class="subform"><h1>Submit A Sighting</h1></div>
+<div class="main">
   <form>
-    <div class="form-group">
-      <label for="comment">Comment:</label>
-      <textarea class="form-control" rows="5" id="comment"></textarea>
+    <div class="name">
+      <h2 class="name"></h2>Date</h2>
+      <input class="date" type="text" name="date"><br>
+      
+      <h2 class="name"></h2>City</h2>
+       <input class="city" type="text" name="city">
+       
     </div>
-    <button type="button" class="btn btn-default">Submit</button>
+    <h2 class="name">State</h2>
+    <input class="state" type="text" name="state">
+
+    <h2 class="name">Shape</h2>
+    <input class="shape" type="text" name="shape">
+
+    <h2 class="name">Duration</h2>
+    <input class="duration" type="text" name="duration">
+  
+  
+
+    <h2 class="name">Summary</h2>
+    <textarea class="form-control" rows="5" type="text" name="summary"></textarea>
+
+  
+
+    
+    
+    <button type="button" class="submit">Submit</button>
+
+
+
   </form>
 </div>
+
 
 
 </body>
