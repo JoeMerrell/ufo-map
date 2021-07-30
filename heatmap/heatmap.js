@@ -26,37 +26,27 @@ for (let i = 0; i< res.data.length; i++)
   console.log(error);
 });
 
-
-function initMap(){
-
  
- 
- //Data points defined as an array of LatLng objects 
-/*var heatmapData = [
-  {location:new google.maps.LatLng(33.384, -86.411), weight: 1000},
-  new google.maps.LatLng(30.695, -88.039),
-  new google.maps.LatLng(30.246, -87.700),
-  {location: new google.maps.LatLng(34.026, -86.326), weight: 1000},
-  new google.maps.LatLng(37.782, -122.439),
-  new google.maps.LatLng(37.782, -122.437),
-  new google.maps.LatLng(37.782, -122.435),
-  new google.maps.LatLng(37.785, -122.447),
-  new google.maps.LatLng(37.785, -122.445),
-  new google.maps.LatLng(37.785, -122.443),
-  new google.maps.LatLng(37.785, -122.441),
-  new google.maps.LatLng(37.785, -122.439),
-  new google.maps.LatLng(37.785, -122.437),
-  new google.maps.LatLng(37.785, -122.435),
-  {location: new google.maps.LatLng(37.782, -122.441), weight: 3},
-];*/
+  let map;
+  const US_BOUNDS = {
+    north: 49.27,
+    south: 24.89,
+    west: -125.14,
+    east: -66.52,
+  };
+  const middle = { lat:  40.62, lng: -98.33 };
+  
 
-var AL = new google.maps.LatLng(34.0262082, -86.3260923);
-
-map = new google.maps.Map(document.getElementById('map'), {
-  center: AL,
-  zoom: 13,
-  map: map
-});
+  function initMap() {
+    map = new google.maps.Map(document.getElementById("map"), {
+      center: middle,
+      restriction: {
+        latLngBounds: US_BOUNDS,
+        strictBounds: false,
+      },
+      zoom: 5,
+    });
+  
 
 var heatmap = new google.maps.visualization.HeatmapLayer({
   data: heatmapData
