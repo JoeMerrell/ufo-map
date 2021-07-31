@@ -28,10 +28,10 @@
 
   <header>
     
-    <h1 class="container-fluid">UFO MAP</h1>
+    <h1 class="container-fluid site-title">UFO MAP</h1>
     
     <nav class="container-fluid navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand font-weight-bold" href="#">Data collected by NUFORC</a>
+        <a class="navbar-brand font-weight-bold navbar-text" href="#">Data collected by NUFORC</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -48,9 +48,6 @@
 
   <div id="map-container" class="container-fluid">
 
-    
-
-
 
     <div id="map"></div>
     <script defer
@@ -59,19 +56,20 @@
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="./heatmap.js"></script>
 
+  </div>
 
-    <div>
+    <div  class="container-fluid">
         <div class="row align-items-start">
           <div class="col">
             <div class="card border-0" style="width: 18rem;">
               <div class="card-body">
                 <h5 class="card-title">Search</h5>
                 <!-- <h6 class="card-subtitle mb-2">Data collected by the National UFO Reporting Center (NUFORC)</h6> -->
-                <!-- <p class="card-text">Select a US State and date range to perform a basic search of the database.</p> -->
+                <p class="card-text">Select a US State and date range to perform a basic search of the database.</p>
           
                 <form class="form-inline">
                   <label class="my-1 mr-2" for="inlineFormCustomSelectPref"></label>
-                  <select class="custom-select my-1 mr-sm-2" size="1" id="selectState">
+                  <select class="custom-select my-2 mr-sm-2" size="1" id="selectState">
                     <option selected>Select State</option>
                     <option value="AL">Alabama</option>
                     <option value="AK">Alaska</option>
@@ -126,7 +124,27 @@
                     <option value="WY">Wyoming</option>
               
                   </select>
-      
+
+                  <div class="input-group">
+                
+                    <input type="text" class="form-control date-picker" name="daterange" value="01/01/2016 - 07/30/2021" />
+                    
+                  </div>
+
+
+
+                  <script>
+                    $(function() {
+                      $('input[name="daterange"]').daterangepicker({
+                        opens: 'left'
+                      }, function(start, end, label) {
+                        console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+                    
+                    
+                      });
+                      
+                    });
+                    </script>
       
       
                   <p><button type="submit" class="btn btn-outline-dark my-1 ">SUBMIT</button></p>
@@ -135,9 +153,13 @@
               
               </div>
             </div>
-          </div>
 
-</div>
+            
+    </div>
+
+    
+
+
 
   
 

@@ -2,7 +2,7 @@
 // axios.<method> will now provide autocomplete and parameter typings
 var heatmapData = [];
 
-var state = "WA"
+var state = "CA"
 var date1 = "01/01/2021"
 var date2 = "02/01/2021"
 

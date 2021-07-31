@@ -1,26 +1,3 @@
-html, body {
-    height: 100%;
-}
-
-
-
-
-
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background-color:black;
-    color:white;
-    font-family: 'IBM Plex Sans', sans-serif;
-}
-
-#map {
-    height: 100%;
-    /* width: 100%; */
-}
-
 a:link {
     text-decoration: none;
     color: white;
@@ -51,10 +28,13 @@ li {
 
 .form-inline {
     padding: 0px 0px 0px -1px;
+} 
+
+
+
+
+#map {
+    height: 500px;
+    width: 100%;
+    
 }
-
-
-/* .card {
-
-    background-color:black;
-} */

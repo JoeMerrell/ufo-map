@@ -6,21 +6,34 @@
     font-family: 'IBM Plex Sans', sans-serif;
 }
 
+.site-title {
 
+    padding-top: 10px;
+    padding-left: 20px;
+} 
 
 #map {
     height: 500px;
     width: 100%;
     
-    
-};
+}
 
+.navbar-text {
+
+    color: black;
+    padding-left: 10px;
+
+}
+
+.date-picker {
+
+    border-color: black;
+
+}
 
 #map-container * {
 
     background-color: initial;
     
-
-
 }
 

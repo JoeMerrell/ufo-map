@@ -39,6 +39,8 @@ const sess = {
   app.use(express.static(path.join(__dirname, 'public')));
   app.use(cors());
   
+console.log(path.join(__dirname, 'public'));
+
   app.use(require('./controllers/'));
   
   sequelize.sync({ force: false }).then(() => {
