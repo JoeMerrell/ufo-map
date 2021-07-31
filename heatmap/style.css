@@ -1,4 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: black;
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+
+
 #map {
-    height: 700px;
+    height: 500px;
     width: 100%;
+    
+    
 };
+
+
+#map-container * {
+
+    background-color: initial;
+    
+
+
+}
+
