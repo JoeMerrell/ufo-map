@@ -95,7 +95,7 @@
                             </select> <br><br>
                 
                                     <div class="input-group">
-                                        <input type="text" class="form-control date-picker" name="daterange" value="01/01/2016 - 07/30/2021" />    
+                                        <input type="text" class="form-control date-picker" id="dateSearch" name="daterange" value="01/01/2016 - 07/30/2021" />    
                                     </div> <br>
 
                                         <script>
@@ -130,17 +130,19 @@
   <form>
     
       
-        <input class="date" type="text" name="date" value=" date of sighting"><br><br>
+        <input class="date" type="text" name="date" id="submit_date" value=" date of sighting"><br><br>
       
-        <input class="city" type="text" name="city" value=" city"><br><br>
+        <input class="city" type="text" name="city" id="submit_city" value=" city"><br><br>
     
-        <input class="state" type="text" name="state" value=" state"><br><br>
+        <input class="state" type="text" name="state" id="submit_state" value=" state"><br><br>
 
-        <input class="shape" type="text" name="shape" value=" shape"><br><br>
+        <input class="shape" type="text" name="shape" id="submit_shape" value=" shape"><br><br>
 
-        <input class="duration" type="text" name="duration" value=" sighting duration"><br><br>
+        <input class="duration" type="text" name="duration" id="submit_duration" value=" sighting duration"><br><br>
+
+        <div>Sighting details:</div>
   
-        <textarea class="form-control form-box" rows="5" type="text" name="summary" value=" "></textarea>
+        <textarea class="form-control form-box" rows="5" type="text" name="summary" id="submit_summary" value="details"></textarea>
     
     <button type="submit" class="btn btn-outline-dark my-1 ">SUBMIT</button>
 
