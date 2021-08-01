@@ -1,25 +1,45 @@
+/* final style sheet in public folder */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: black;
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+#map {
+    height: 500px;
+    width: 100%;
+}
+
 a:link {
     text-decoration: none;
     color: white;
 }
 
-.state-btn {
-    background-color: black;
-    border-color: white;
-    
+.date-picker {
+
+    border-color: black;
+
+}
+
+.form-box {
+
+    border-color: black;
 }
 
 header {
-    padding: 30px 50px 30px 15px;
-    background-color:black;
-    display: flex;
+    padding: 30px 50px 0px 15px;
+    
+    /* display: flex; */
     justify-content: space-between;
     flex-wrap: wrap;
     /* webkit for Safari */
-    position: -webkit-sticky;
+    /* position: -webkit-sticky;
     position: sticky;
     top: 0;
-    z-index: 9998;
+    z-index: 9998; */
 }
 
 li {
@@ -33,8 +53,3 @@ li {
 
 
 
-#map {
-    height: 500px;
-    width: 100%;
-    
-}

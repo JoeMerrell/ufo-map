@@ -42,6 +42,8 @@ router.get('/search', function (req, res) {
       return sightingDate >= date1 && sightingDate <= date2;
     });
     res.json(results);
+
+    
     // pull latitudes and longitudes for additional use ...
     const latLonArray = results.map((result) => ({
       latitude: parseFloat(result.latitude),

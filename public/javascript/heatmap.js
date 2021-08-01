@@ -11,11 +11,10 @@ var date2 = "02/01/2021"
 // axios.get('http://localhost:3001/api/sightings/search?state=CA&date1=04/01/2021&date2=05/31/2021')
 axios.get('http://localhost:3001/api/sightings/search?state=' + state + '&date1=' + date1 + '&date2=' + date2)
 .then (function (res) {
-  //then((resp) => resp.json());
-  // Log full response
+
   console.log(res);
 
-  // mapData = res; 
+  mapData = res; 
 
   //Log lat/long
 for (let i = 0; i< res.data.length; i++)
