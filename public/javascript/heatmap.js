@@ -1,10 +1,18 @@
 //const axios = ('axios').default;
 // axios.<method> will now provide autocomplete and parameter typings
+
+
 let heatmapData = [];
+let dateSearch = document.querySelector('#dateSearch');
+
+let selectState = document.querySelector('#selectState');
+let searchSubmit = document.querySelector('#searchSubmit');
+
+// let state = selectState.value;
 
 let state = "CA"
-let date1 = "01/01/2021"
-let date2 = "02/01/2021"
+let date1 = dateSearch.value.substring(0, 10);
+let date2 = dateSearch.value.slice(-10);
 
 // let mapData;
 
@@ -12,20 +20,26 @@ let date2 = "02/01/2021"
 
 
 
+// let firstDate = dateSearch.value.substring(0, 10);
+// let secondDate = dateSearch.value.slice(-10);
 
-const selectState = document.querySelector('#selectState');
 
-let dateSearch = document.querySelector('#dateSearch');
+// const selectState = document.querySelector('#selectState');
 
-const searchSubmit = document.querySelector('#searchSubmit');
+// let dateSearch = document.querySelector('#dateSearch');
 
-console.log(dateSearch.innerHTML);
+// const searchSubmit = document.querySelector('#searchSubmit');
+
+// console.log(dateSearch.innerHTML);
 function sightingSearch() {
-
-    parseInt(dateSearch);
+  // event.preventDefault(); 
+ console.log("it worked");
+  
+    
+  }
     
   
-}
+
 
 // searchSubmit.onClick() {
 // sightingSearch();
@@ -34,7 +48,7 @@ function sightingSearch() {
 
 
 
-
+// WRAP IN FUNCTION search call on button click -- pass in state, date1, date2
 
 // axios.get('http://localhost:3001/api/sightings/search?state=CA&date1=04/01/2021&date2=05/31/2021')
 axios.get('http://localhost:3001/api/sightings/search?state=' + state + '&date1=' + date1 + '&date2=' + date2)
@@ -84,3 +98,4 @@ var heatmap = new google.maps.visualization.HeatmapLayer({
 });
 heatmap.setMap(map);
 };
+
