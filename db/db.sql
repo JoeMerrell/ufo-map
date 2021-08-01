@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS ufo_map;
+CREATE DATABASE ufo_map;
