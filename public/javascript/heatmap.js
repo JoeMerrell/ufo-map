@@ -51,7 +51,7 @@ function sightingSearch(state, date1, date2) {
 // WRAP IN FUNCTION search call on button click -- pass in state, date1, date2
 
 // axios.get('http://localhost:3001/api/sightings/search?state=CA&date1=04/01/2021&date2=05/31/2021')
-axios.get('http://localhost:3001/api/sightings/search?state=' + state + '&date1=' + date1 + '&date2=' + date2)
+axios.get('/api/sightings/search?state=' + state + '&date1=' + date1 + '&date2=' + date2)
 .then (function (res) {
 
   console.log(res);
