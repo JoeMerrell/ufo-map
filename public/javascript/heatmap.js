@@ -1,18 +1,17 @@
 //const axios = ('axios').default;
 // axios.<method> will now provide autocomplete and parameter typings
-
+let map;
+const US_BOUNDS = {
+  north: 49.27,
+  south: 24.89,
+  west: -125.14,
+  east: -66.52,
+};
+const middle = { lat:  40.62, lng: -98.33 };
 
 let heatmapData = [];
-let dateSearch = document.querySelector('#dateSearch');
 
-let selectState = document.querySelector('#selectState');
-let searchSubmit = document.querySelector('#searchSubmit');
 
-// let state = selectState.value;
-
-let state = "CA"
-let date1 = dateSearch.value.substring(0, 10);
-let date2 = dateSearch.value.slice(-10);
 
 // let mapData;
 
@@ -31,12 +30,13 @@ let date2 = dateSearch.value.slice(-10);
 // const searchSubmit = document.querySelector('#searchSubmit');
 
 // console.log(dateSearch.innerHTML);
-function sightingSearch() {
+
+function sightingSearch(state, date1, date2) {
   // event.preventDefault(); 
- console.log("it worked");
+
   
     
-  }
+ 
     
   
 
@@ -70,16 +70,9 @@ for (let i = 0; i< res.data.length; i++)
 .catch(function (error) {
   console.log(error);
 });
-
+}
  
-  let map;
-  const US_BOUNDS = {
-    north: 49.27,
-    south: 24.89,
-    west: -125.14,
-    east: -66.52,
-  };
-  const middle = { lat:  40.62, lng: -98.33 };
+
   
 
   function initMap() {
@@ -99,3 +92,23 @@ var heatmap = new google.maps.visualization.HeatmapLayer({
 heatmap.setMap(map);
 };
 
+function handleSearch(event) {
+  event.preventDefault();
+  
+  let dateSearch = document.querySelector('#dateSearch');
+  
+  let selectState = document.querySelector('#selectState');
+  let searchSubmit = document.querySelector('#searchSubmit');
+  
+  // let state = selectState.value;
+  
+  let state = selectState.value.trim();
+  console.log("state", state);
+  let date1 = dateSearch.value.substring(0, 10);
+  let date2 = dateSearch.value.slice(-10);
+  console.log(date1, date2);
+  sightingSearch(state, date1, date2);
+
+}
+
+document.querySelector('#searchSubmit').addEventListener('click', handleSearch);
