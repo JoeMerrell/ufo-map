@@ -6,4 +6,5 @@ UFO-MAP is a interactive user friendly UFO sighting application. While using UFO
 Heroku Link:
 https://new-ufo.herokuapp.com/
  
- 
+Github Link:
+https://github.com/JoeMerrell/ufo-map
