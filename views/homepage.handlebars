@@ -1,43 +1,45 @@
 {{!-- This is the main page content & feeds into main.handlebars --}}
 
-  <header>
-    
+<header>
+
     <h1 class="container-fluid">UFO MAP /// </h1>
-    
+
     <nav class="container-fluid navbar navbar-expand-lg navbar-light ">
-        <a class="navbar-brand font-weight-bold" href="#">Data collected by the National UFO Reporting Center (NUFORC)</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+        <a class="navbar-brand font-weight-bold" href="#">Data collected by the National UFO Reporting Center
+            (NUFORC)</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav">
-            {{!-- <a class="nav-item nav-link active" href="#">about</span></a>
-            <a class="nav-item nav-link active" href="#">submit a sighting</a> --}}
-          </div>
+            <div class="navbar-nav">
+                {{!-- <a class="nav-item nav-link active" href="#">about</span></a>
+                <a class="nav-item nav-link active" href="#">submit a sighting</a> --}}
+            </div>
         </div>
-      </nav>
+    </nav>
 
-  </header>  
-  
-  <div>
+</header>
+
+<div>
 
     <div id="map-container" class="container-fluid">
         <div id="map"></div>
     </div>
 
-<div class="container-fluid">
+    <div class="container-fluid">
 
-    <div class="row">
-        <div class="col-sm">
-            <div class="card border-0" style="width: 18rem;">
-                <div class="card-body">
-                    <h4 class="card-title">Search</h4>
+        <div class="row">
+            <div class="col-sm">
+                <div class="card border-0" style="width: 18rem;">
+                    <div class="card-body">
+                        <h4 class="card-title">Search</h4>
 
                         <p class="card-text">Select a US State and date range</p>
-                                            <!-- <h6 class="card-subtitle mb-2">Data collected by the National UFO Reporting Center (NUFORC)</h6> -->
-                                            <!-- <p class="card-text">Select a US State and date range to perform a basic search of the database.</p> -->
-                                    
-                            <form class="form-inline">
+                        <!-- <h6 class="card-subtitle mb-2">Data collected by the National UFO Reporting Center (NUFORC)</h6> -->
+                        <!-- <p class="card-text">Select a US State and date range to perform a basic search of the database.</p> -->
+
+                        <form class="form-inline">
                             <label class="my-1 mr-2" for="inlineFormCustomSelectPref"></label>
                             <select class="custom-select my-1 mr-sm-2" size="1" id="selectState">
                                 <option selected>Select State</option>
@@ -93,103 +95,80 @@
                                 <option value="WI">Wisconsin</option>
                                 <option value="WY">Wyoming</option>
                             </select> <br><br>
-                
-                                    <div class="input-group">
-                                        <input type="text" class="form-control date-picker" id="dateSearch" name="daterange" value="01/01/2016 - 07/30/2021" />    
-                                    </div> <br>
 
-                                        <script>
-                                            $(function() {
-                                            $('input[name="daterange"]').daterangepicker({
-                                                opens: 'right'
-                                            }, function(start, end, label) {
-                                                console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));      
-                                            });
-                                            });
-                                            
+                            <div class="input-group">
+                                <input type="text" class="form-control date-picker" id="dateSearch" name="daterange"
+                                    value="01/01/2016 - 07/30/2021" />
+                            </div> <br>
 
-
+                            <script>
+                                $(function () {
+                                    $('input[name="daterange"]').daterangepicker({
+                                        opens: 'right'
+                                    }, function (start, end, label) {
+                                        console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+                                    });
+                                });
 
 
 
-                                        </script>
-                
-                                            <button  class="btn btn-outline-dark my-1" id="searchSubmit"  >SUBMIT</button><br><br>
-                            </form>     
 
-                            <p> Note: For this first version of this web app, we've pulled NUFORC's U.S. records from the past 5 years only (2016 -2021). Future versions will incorporate all of their available data, and will feature additional interface refinements and visualizations.</p>
 
+
+                            </script>
+
+                            <button class="btn btn-outline-dark my-1" id="searchSubmit">SUBMIT</button><br><br>
+                        </form>
+
+                        <p> Note: For this first version of this web app, we've pulled NUFORC's U.S. records from the
+                            past 5 years only (2016 -2021). Future versions will incorporate all of their available
+                            data, and will feature additional interface refinements and visualizations.</p>
+
+                    </div>
                 </div>
-            </div>     
-        </div>
+            </div>
 
-{{!-- insert card here --}}
+            {{!-- insert card here --}}
 
-<div class="col-sm">
-            <div class="card border-0" style="width: 18rem;">
-                <div class="card-body">
-                    <h4 class="card-title">Submit a sighting</h4>
-                    <p class="card-text">Our moderators will post to the database once they've had the chance to review.</p>
-
-            
-<div class="main">
-  <form>
-    
-      
-        <input class="date" type="text" name="date" id="submit_date" value=" date of sighting"><br><br>
-      
-        <input class="city" type="text" name="city" id="submit_city" value=" city"><br><br>
-    
-        <input class="state" type="text" name="state" id="submit_state" value=" state"><br><br>
-
-        <input class="shape" type="text" name="shape" id="submit_shape" value=" shape"><br><br>
-
-        <input class="duration" type="text" name="duration" id="submit_duration" value=" sighting duration"><br><br>
-
-        <div>Sighting details:</div>
-  
-        <textarea class="form-control form-box" rows="5" type="text" name="summary" id="submit_summary" value="details"></textarea>
-    
-    <button type="submit" class="btn btn-outline-dark my-1 ">SUBMIT</button>
+            <div class="col-sm">
+                <div class="card border-0" style="width: 18rem;">
+                    <div class="card-body">
+                        <h4 class="card-title">Submit a sighting</h4>
+                        <p class="card-text">Our moderators will post to the database once they've had the chance to
+                            review.</p>
 
 
+                        <div class="main">
+                            <form>
 
-  </form>        
-                                 
 
+                                <input class="date" type="text" name="date" id="submit_date"
+                                    value=" date of sighting"><br><br>
+
+                                <input class="city" type="text" name="city" id="submit_city" value=" city"><br><br>
+
+                                <input class="state" type="text" name="state" id="submit_state" value=" state"><br><br>
+
+                                <input class="shape" type="text" name="shape" id="submit_shape" value=" shape"><br><br>
+
+                                <input class="duration" type="text" name="duration" id="submit_duration"
+                                    value=" sighting duration"><br><br>
+
+                                <div>Sighting details:</div>
+
+                                <textarea class="form-control form-box" rows="5" type="text" name="summary"
+                                    id="submit_summary" value="details"></textarea>
+
+                                <button type="submit" class="btn btn-outline-dark my-1 ">SUBMIT</button>
+
+
+
+                            </form>
+
+
+                        </div>
+                    </div>
                 </div>
-            </div>     
-        </div>
-
-
-
-
-        
-
-
-{{!-- and here --}}
-    </div>
-
-    <div class="col-sm">
-        <div class="card border-0" style="width: 18rem;">
-            <div class="card-body">
-                <h4 class="card-title">About</h4>
-                 <p class="card-text">As we’ve seen through recent government disclosures and declassifications related to UFO sightings, the public interest in the reality of the UFO phenomenon has increased dramatically. Our app gives users to ability to easily  search and visualize sighting data collected by the National UFO Reporting Center (NUFORC)</p>
-                 <br>
-                 <h4 class="card-title">Login</h4>
-                 <form>
-                     <input class="date" type="text" name="date" value=" username"><br><br>
-                     <input class="date" type="text" name="date" value=" password"><br><br>
-                     <button type="submit" class="btn btn-outline-dark my-1 ">SUBMIT</button>
-
-
-                 </form>
-
-            
-
-            </div>     
-        </div>
-</div>
 
 
 
@@ -197,10 +176,43 @@
 
 
 
+                {{!-- and here --}}
+            </div>
+
+            <div class="col-sm">
+                <div class="card border-0" style="width: 18rem;">
+                    <div class="card-body">
+                        <h4 class="card-title">About</h4>
+                        <p class="card-text">As we’ve seen through recent government disclosures and declassifications
+                            related to UFO sightings, the public interest in the reality of the UFO phenomenon has
+                            increased dramatically. Our app gives users to ability to easily search and visualize
+                            sighting data collected by the National UFO Reporting Center (NUFORC)</p>
+                        <br>
+                        <h4 class="card-title">Admin Login</h4>
+                        <form class="login-form">
+                            <input type="text" id="user">
+                            <input type="password" id="pd">
+                            <input type="button" onclick="createCookie()" value="submit">
+
+
+                        </form>
+
+
+
+                    </div>
+                </div>
+            </div>
 
 
 
 
-  
 
-</body>
+
+
+
+
+
+
+
+
+            </body>

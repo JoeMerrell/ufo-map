@@ -14,6 +14,7 @@ const sequelize = require('./config/connection');
 
 const sess = {
     secret: 'Super secret secret',
+    cookie: {},
     resave: false,
     saveUninitialized: true,
   
