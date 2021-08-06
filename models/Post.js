@@ -10,33 +10,33 @@ Post.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        date: {
+        submitDate: {
             type: DataTypes.DATE,
             allowNull: false,
             validate: {
                 len: [10]
             }
         },
-        city: {
+        submitCity: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        state: {
+        submitState: {
             type: DataTypes.STRING,
             allowNull: false,
             validate:{
                 len: [2]
             }
         },
-        shape: {
+        submitShape: {
             type: DataTypes.STRING,
             allowNull: true,
         },
-        duration: {
+        submitDuration: {
             type: DataTypes.STRING,
             allowNull: true,
         },
-        summary: {
+        submitSummary: {
             type: DataTypes.STRING,
             allowNull: true,
         }

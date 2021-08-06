@@ -11,8 +11,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            {{!-- <a class="nav-item nav-link active" href="#">about</span></a>
-            <a class="nav-item nav-link active" href="#">submit a sighting</a> --}}
+
           </div>
         </div>
       </nav>
@@ -34,8 +33,7 @@
                     <h4 class="card-title">Search</h4>
 
                         <p class="card-text">Select a US State and date range</p>
-                                            <!-- <h6 class="card-subtitle mb-2">Data collected by the National UFO Reporting Center (NUFORC)</h6> -->
-                                            <!-- <p class="card-text">Select a US State and date range to perform a basic search of the database.</p> -->
+                                            
                                     
                             <form class="form-inline">
                             <label class="my-1 mr-2" for="inlineFormCustomSelectPref"></label>
@@ -123,7 +121,7 @@
             </div>     
         </div>
 
-{{!-- insert card here --}}
+
 
 <div class="col-sm">
             <div class="card border-0" style="width: 18rem;">
@@ -136,21 +134,21 @@
   <form>
     
       
-        <input class="date" type="text" name="date" id="submit_date" value=" date of sighting"><br><br>
+        <input class="date" type="text" name="date" id="submitDate" value=" date of sighting"><br><br>
       
-        <input class="city" type="text" name="city" id="submit_city" value=" city"><br><br>
+        <input class="city" type="text" name="city" id="submitCity" value=" city"><br><br>
     
-        <input class="state" type="text" name="state" id="submit_state" value=" state"><br><br>
+        <input class="state" type="text" name="state" id="submitState" value=" state"><br><br>
 
-        <input class="shape" type="text" name="shape" id="submit_shape" value=" shape"><br><br>
+        <input class="shape" type="text" name="shape" id="submitShape" value=" shape"><br><br>
 
-        <input class="duration" type="text" name="duration" id="submit_duration" value=" sighting duration"><br><br>
+        <input class="duration" type="text" name="duration" id="submitDuration" value=" sighting duration"><br><br>
 
         <div>Sighting details:</div>
   
-        <textarea class="form-control form-box" rows="5" type="text" name="summary" id="submit_summary" value="details"></textarea>
+        <textarea class="form-control form-box" rows="5" type="text" name="summary" id="submitSummary" value="details"></textarea>
     
-    <button type="submit" class="btn btn-outline-dark my-1 ">SUBMIT</button>
+    <button type="submit" id="postSubmit" class="btn btn-outline-dark my-1">SUBMIT</button>
 
 
 
@@ -167,7 +165,7 @@
         
 
 
-{{!-- and here --}}
+
     </div>
 
     <div class="col-sm">
@@ -191,7 +189,34 @@
         </div>
 </div>
 
+<div class="container-fluid">
 
+
+
+
+
+<div>
+<ul>
+  {{#each sightingSearch}}
+    
+    <li>
+      <p>Type: {{date}}</p>
+      <p>Location: {{city_state}}</p>
+      <p>Shape: {{shape}}</p>
+      <p>Sighting duration: {{duration}}</p>
+      <p>Summary: {{summary}}</p>
+      
+      
+     
+      
+    </li>
+    
+  {{/each}}
+</ul>
+
+</div>
+
+</div>
 
 
 

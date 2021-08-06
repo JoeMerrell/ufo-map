@@ -1,26 +1,20 @@
 const express = require('express');
 const router = express.Router();
-const Post = require('../../models/Post');
+const Post = require('../../models'); // remove post
 const sequelize = require('../../config/connection');
-
-
-
-
 
 
 
 router.post('/', (req, res) => {
 
-    // if (req.session) {
-
 
       Post.create({
-        date: req.body.date,
-        city: req.body.city,
-        state: req.body.state,
-        shape: req.body.shape,
-        duration: req.body.duration,
-        summary: req.body.summary
+        submitDate: req.body.submitDate,
+        submitCity: req.body.submitCity,
+        submitState: req.body.submitState,
+        submitShape: req.body.submitShape,
+        submitDuration: req.body.submitDuration,
+        submitSummary: req.body.submitSummary
       })
         .then(dbPostData => res.json(dbPostData))
         .catch(err => {
@@ -28,11 +22,6 @@ router.post('/', (req, res) => {
           res.status(500).json(err);
         });
 
-
-
-    // }
   });
-
-
 
   module.exports = router;
