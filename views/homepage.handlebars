@@ -2,22 +2,18 @@
 
   <header>
     
-    <h1 class="container-fluid">UFO MAP /// </h1>
+    <h1 class="container-fluid">UFO MAP ///</h1>
     
     <nav class="container-fluid navbar navbar-expand-lg navbar-light ">
-        <a class="navbar-brand font-weight-bold" href="#">Data collected by the National UFO Reporting Center (NUFORC)</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav">
-
-          </div>
+        <a class="navbar-brand font-weight-bold" href="http://www.nuforc.org/" target="_blank">Data collected by the National UFO Reporting Center (NUFORC)</a>
+       
         </div>
       </nav>
 
   </header>  
-  
+
+{{!-- Google map --}}
+
   <div>
 
     <div id="map-container" class="container-fluid">
@@ -34,7 +30,7 @@
 
                         <p class="card-text">Select a US State and date range</p>
                                             
-                                    
+{{!-- State selector --}}
                             <form class="form-inline">
                             <label class="my-1 mr-2" for="inlineFormCustomSelectPref"></label>
                             <select class="custom-select my-1 mr-sm-2" size="1" id="selectState">
@@ -91,7 +87,8 @@
                                 <option value="WI">Wisconsin</option>
                                 <option value="WY">Wyoming</option>
                             </select> <br><br>
-                
+
+{{!-- Date picker --}}
                                     <div class="input-group">
                                         <input type="text" class="form-control date-picker" id="dateSearch" name="daterange" value="01/01/2016 - 07/30/2021" />    
                                     </div> <br>
@@ -105,13 +102,9 @@
                                             });
                                             });
                                             
-
-
-
-
-
                                         </script>
-                
+
+{{!-- State and date search button --}}
                                             <button  class="btn btn-outline-dark my-1" id="searchSubmit"  >SUBMIT</button><br><br>
                             </form>     
 
@@ -123,7 +116,7 @@
 
 
 
-<div class="col-sm">
+    <div class="col-sm">
             <div class="card border-0" style="width: 18rem;">
                 <div class="card-body">
                     <h4 class="card-title">Submit a sighting</h4>
@@ -131,26 +124,26 @@
 
             
 <div class="main">
-  <form>
-    
-      
-        <input class="date" type="text" name="date" id="submitDate" value=" date of sighting"><br><br>
-      
-        <input class="city" type="text" name="city" id="submitCity" value=" city"><br><br>
-    
-        <input class="state" type="text" name="state" id="submitState" value=" state"><br><br>
 
-        <input class="shape" type="text" name="shape" id="submitShape" value=" shape"><br><br>
+{{!-- Submit a sighting form --}}
 
-        <input class="duration" type="text" name="duration" id="submitDuration" value=" sighting duration"><br><br>
+  <form id="form" autocomplete="off">
+          
+        <input class="date" type="text" name="date" id="submitDate" value="" placeholder=" MM/DD/YYYY"><br><br>
+      
+        <input class="city" type="text" name="city" id="submitCity" value="" placeholder=" City"><br><br>
+    
+        <input class="state" type="text" name="state" id="submitState" value="" placeholder=" State (abbreviation)"><br><br>
+
+        <input class="shape" type="text" name="shape" id="submitShape" value="" placeholder=" Shape"><br><br>
+
+        <input class="duration" type="text" name="duration" id="submitDuration" value="" placeholder=" Sighting duration"><br><br>
 
         <div>Sighting details:</div>
   
-        <textarea class="form-control form-box" rows="5" type="text" name="summary" id="submitSummary" value="details"></textarea>
+        <textarea class="form-control form-box" rows="5" type="text" name="summary" value="" id="submitSummary"></textarea>
     
-    <button type="submit" id="postSubmit" class="btn btn-outline-dark my-1">SUBMIT</button>
-
-
+    <button type="submit" id="post-submit" class="btn btn-outline-dark my-1">SUBMIT</button>
 
   </form>        
                                  
@@ -160,13 +153,9 @@
         </div>
 
 
-
-
-        
-
-
-
     </div>
+
+{{!-- Admin login (actual function tbd) --}}
 
     <div class="col-sm">
         <div class="card border-0" style="width: 18rem;">
@@ -176,11 +165,9 @@
                  <br>
                  <h4 class="card-title">Login</h4>
                  <form>
-                     <input class="date" type="text" name="date" value=" username"><br><br>
-                     <input class="date" type="text" name="date" value=" password"><br><br>
+                     <input class="date" type="text" name="date" placeholder=" Username"><br><br>
+                     <input class="date" type="text" name="date" placeholder=" Password"><br><br>
                      <button type="submit" class="btn btn-outline-dark my-1 ">SUBMIT</button>
-
-
                  </form>
 
             
@@ -189,43 +176,6 @@
         </div>
 </div>
 
-<div class="container-fluid">
 
-
-
-
-
-<div>
-<ul>
-  {{#each sightingSearch}}
-    
-    <li>
-      <p>Type: {{date}}</p>
-      <p>Location: {{city_state}}</p>
-      <p>Shape: {{shape}}</p>
-      <p>Sighting duration: {{duration}}</p>
-      <p>Summary: {{summary}}</p>
-      
-      
-     
-      
-    </li>
-    
-  {{/each}}
-</ul>
-
-</div>
-
-</div>
-
-
-
-
-
-
-
-
-
-  
 
 </body>

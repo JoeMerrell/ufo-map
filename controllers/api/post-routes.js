@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Post = require('../../models'); // remove post
+const Post = require('../../models/Post'); // remove post
 const sequelize = require('../../config/connection');
 
 

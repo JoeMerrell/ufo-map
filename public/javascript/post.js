@@ -1,44 +1,31 @@
-const express = require('express');
-const router = express.Router();
-const Post = require('../../models/Post');
-const sequelize = require('../../config/connection');
-
-let submitDate = document.querySelector('#submitDate');
-let submitCity = document.querySelector('#submitCity');
-let submitState = document.querySelector('#submitState');
-let submitShape = document.querySelector('#submitShape');
-let submitDuration = document.querySelector('#submitDuration');
-let submitSummary = document.querySelector('#submitSummary');
 
 
-function handlePost(event) {
+function addPost(event) {
     event.preventDefault();
     
+    let submitDate = document.getElementById('submitDate').value;
+    let submitCity = document.getElementById('submitCity').value;
+    let submitState = document.getElementById('submitState').value;
+    let submitShape = document.getElementById('submitShape').value;
+    let submitDuration = document.getElementById('submitDuration').value;
+    let submitSummary = document.getElementById('submitSummary').value;
 
+    console.log(submitDate, submitCity, submitState, submitShape, submitDuration, submitSummary);
     
-
-    router.post('/', (req, res) => {
-
-
-      Post.create({
-        submitDate: submitDate.value,
-        submitCity: submitCity.value,
-        submitState: submitState.value,
-        submitShape: submitShape.value,
-        submitDuration: submitDuration.value,
-        submitSummary: submitSummary.value
-      })
-        .then(dbPostData => res.json(dbPostData))
-        .catch(err => {
-          console.log(err);
-          res.status(500).json(err);
-        });
-    
-    });
-    
+    fetch('/api/post', {
+      method: 'POST',
+      body: JSON.stringify({submitDate:submitDate, submitCity:submitCity, submitState:submitState, submitShape:submitShape, submitDuration:submitDuration, submitSummary:submitSummary}),
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-type': 'application/json'
+      }
+    })
+    .then((res) => res.json())
+    .then((data) => console.log(data))
   }
 
-console.log('hello this is the post.js file');
 
-document.getElementById('#postSubmit').addEventListener('click', handlePost);
+document.getElementById('form').addEventListener('submit', addPost);
+
+
 
