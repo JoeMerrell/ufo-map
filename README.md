@@ -32,9 +32,12 @@ UFO Map was created in collaboration between Joe Merrell, Nick Mihaly, and Chad 
 - Add list of the mapped sightings on a separate page that opens when the the search is submitted
 - Admin login will open a separate page that lists all of the user submitted sightings for evaluation and eventual addition to main map database
 - Additional visualizations of search data, including a comparative chart of all US states for a given date range
-<br/><br/>
-<p><a href="[url](https://new-ufo.herokuapp.com/)">Link to the deployed app</a> </p>
-<p><a href="[url](https://github.com/JoeMerrell/ufo-map)">Github repository</a> </p>
+
+
+Link to the deployed app: https://new-ufo.herokuapp.com/
+
+
+GitHub repository: https://github.com/JoeMerrell/ufo-map
 
 
 <img src="public/images/screengrab.png" alt="UFO Map main page">
